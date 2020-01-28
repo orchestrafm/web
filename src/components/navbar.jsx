@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 export default class NavBar extends Component {
     render() {
