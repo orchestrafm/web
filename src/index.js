@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import NavBar from "./components/navbar"
+import Home from "./pages/home"
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Main extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Helmet>
+                        <style>
+                        {
+                            'html, body, #background { background-color: #242424;}'
+                        }
+                        </style>
+                    </Helmet>
+                    <NavBar/>
+                    <Switch>
+                        <Route path="/" exact component={Home}/>
+                    </Switch>
+                </div>
+            </Router>
+        )
+    }
+}
+
+export default Main;
+ReactDOM.render(<Main />, document.getElementById('root'))
