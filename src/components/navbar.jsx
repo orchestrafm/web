@@ -6,8 +6,7 @@ export default class NavBar extends Component {
         return (
             <nav className="navbar is-danger" role="navigation" aria-label="main navigation">
                 <div className="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item">
+                    <div className="navbar-start">
                             Home
                         </a>
                     </div>
