@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollReveal from 'scrollreveal'
+import ScrollReveal from 'scrollreveal';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
