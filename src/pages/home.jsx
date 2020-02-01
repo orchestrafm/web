@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import styled, { css } from 'styled-components'
 import ScrollReveal from 'scrollreveal';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 class Home extends Component {
     render() {
+        const DiscordButton = styled.button`
+            background-color: #7289da;
+
+            ${props =>
+            props.primary &&
+            css`
+                background: #7289da;
+            `};
+        `
         return (
             <container>
                 <div> &nbsp; </div>
