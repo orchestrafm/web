@@ -27,14 +27,59 @@ class Home extends Component {
                             <h2 className="subtitle slogan">
                                 A free, open source platform for all your favorite rhythm game types.
                             </h2>
-                            <a href="https://github.com/OrchestraFM">
-                                <button className="button is-large">
-                                    <span class="icon is-medium">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                    <span>View on GitHub</span>
-                                </button>
-                            </a>
+
+                            <div className="columns">
+                                <div className="column is-one-third">
+                                    <a href="https://github.com/OrchestraFM">
+                                        <button className="button is-large">
+                                            <span className="icon is-medium">
+                                                <i className="fab fa-github"></i>
+                                            </span>
+                                            <span>View on GitHub</span>
+                                        </button>
+                                    </a>
+                                </div>
+
+                                <div className="column is-one-third">
+                                    <a href="https://discord.gg/EsZaJVN">
+                                        <DiscordButton className="button is-large">
+                                            <span class="icon is-medium">
+                                                <i class="fab fa-discord"></i>
+                                            </span>
+                                            <span>Visit Us on Discord</span>
+                                        </DiscordButton>
+                                    </a>
+                                </div>
+
+                                <div className="column is-one-third">
+                                    <a href="https://twitter.com/OrchestraFM">
+                                        <button className="button is-large is-info">
+                                            <span className="icon is-medium">
+                                                <i className="fab fa-twitter"></i>
+                                            </span>
+                                            <span>Follow Us on Twitter</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="columns">
+                                <div className="column is-half is-offset-one-quarter">
+                                    <div className="field has-addons">
+                                        <div className="control">
+                                            <input className="input is-large" type="email" placeholder="example@example.com"/>
+                                        </div>
+                                        <div className="control">
+                                            <a className="button is-success is-large">
+                                                Request Early Access
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                         </div>
                     </div>
                 </section>
