@@ -43,8 +43,8 @@ class Home extends Component {
                                 <div className="column is-one-third">
                                     <a href="https://discord.gg/EsZaJVN">
                                         <DiscordButton className="button is-large">
-                                            <span class="icon is-medium">
-                                                <i class="fab fa-discord"></i>
+                                            <span className="icon is-medium">
+                                                <i className="fab fa-discord"></i>
                                             </span>
                                             <span>Visit Us on Discord</span>
                                         </DiscordButton>
