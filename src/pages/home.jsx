@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components'
 import ScrollReveal from 'scrollreveal';
+import Axios from "axios";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {email: ""};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({email: event.target.value})
+    }
+
+    async handleSubmit(event) {
+        return await Axios.post("http://localhost:1000/api/v0/invite/join", {
+            email: this.state.email
+        }).catch((e) => {
+            alert(e);
+        });
+    }
+
     render() {
         const DiscordButton = styled.button`
             background-color: #7289da;
@@ -66,17 +87,18 @@ class Home extends Component {
                             <div className="columns">
                                 <div className="column is-half is-offset-one-quarter">
                                     <div className="field has-addons">
-                                        <div className="control">
-                                            <input className="input is-large" type="email" placeholder="example@example.com"/>
-                                        </div>
-                                        <div className="control">
-                                            <a className="button is-success is-large">
+
+                                            <div className="control">
+                                                <input className="input is-large" type="email" placeholder="example@example.com" value={this.state.email} onChange={this.handleChange}/>
+                                            </div>
+                                            <div className="control">
+                                                <button type="submit" className="button is-success is-large" onClick={this.handleSubmit}>
                                                 Request Early Access
-                                            </a>
-                                        </div>
+                                                </button>
+                                            </div>
+
                                     </div>
                                 </div>
-
                             </div>
 
 
