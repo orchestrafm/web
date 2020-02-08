@@ -144,6 +144,7 @@ class Home extends Component {
                         </p>
                     </div>
                 </div>
+                <br/>
 
                 <div className="columns">
                     <div className="column is-half is-offset-one-quarter">
@@ -155,6 +156,7 @@ class Home extends Component {
                         </p>
                     </div>
                 </div>
+                <br/>
 
                 <div className="columns">
                     <div className="column is-half is-offset-one-quarter">
@@ -166,6 +168,7 @@ class Home extends Component {
                         </p>
                     </div>
                 </div>
+                <br/>
 
                 <div className="columns">
                     <div className="column is-half is-offset-one-quarter">
