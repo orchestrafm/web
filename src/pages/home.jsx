@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components'
 import ScrollReveal from 'scrollreveal';
 import Axios from "axios";
+import { addToast } from '../components/toast'
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
@@ -22,7 +23,11 @@ class Home extends Component {
         return await Axios.post("http://localhost:1000/api/v0/invite/join", {
             email: this.state.email
         }).catch((e) => {
-            alert(e);
+            addToast("The server could not be reached.", {
+                appearance: 'error',
+                autoDismiss: true,
+                pauseOnHover: false,
+            });
         });
     }
 
