@@ -32,10 +32,19 @@ class Home extends Component {
             addToast("The server could not be reached.", {
                 appearance: 'error',
                 autoDismiss: true,
-                pauseOnHover: false,
+                pauseOnHover: true,
             });
         });
+
+        if (res != undefined) {
+            addToast("Added to the waitlist!.", {
+                appearance: 'success',
+                autoDismiss: true,
+                pauseOnHover: true,
+            });
+        }
         this.rerender(false);
+    }
 
     rerender(loading) {
         this.state.loading = loading;
