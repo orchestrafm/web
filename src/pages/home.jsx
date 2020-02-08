@@ -24,7 +24,9 @@ class Home extends Component {
     }
 
     async handleSubmit(event) {
-        return await Axios.post("http://localhost:1000/api/v0/invite/join", {
+        this.rerender(true);
+
+        var res = await Axios.post("http://localhost:1000/api/v0/invite/join", {
             email: this.state.email
         }).catch((e) => {
             addToast("The server could not be reached.", {
@@ -33,6 +35,11 @@ class Home extends Component {
                 pauseOnHover: false,
             });
         });
+        this.rerender(false);
+
+    rerender(loading) {
+        this.state.loading = loading;
+        this.forceUpdate();
     }
 
     render() {
