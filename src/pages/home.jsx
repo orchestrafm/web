@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components'
 import ScrollReveal from 'scrollreveal';
 import Axios from "axios";
-import { addToast } from '../components/toast'
+import { addToast } from '../components/toast';
+import { Button } from 'react-bulma-components';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {email: ""};
+        this.state = {
+            email: "",
+            loading: false,
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -57,34 +61,34 @@ class Home extends Component {
                             <div className="columns">
                                 <div className="column is-one-third">
                                     <a href="https://github.com/OrchestraFM">
-                                        <button className="button is-large">
+                                        <Button className="button is-large">
                                             <span className="icon is-medium">
                                                 <i className="fab fa-github"></i>
                                             </span>
                                             <span>View on GitHub</span>
-                                        </button>
+                                        </Button>
                                     </a>
                                 </div>
 
                                 <div className="column is-one-third">
                                     <a href="https://discord.gg/EsZaJVN">
-                                        <DiscordButton className="button is-large">
+                                        <Button className="button is-large" renderAs={DiscordButton}>
                                             <span className="icon is-medium">
                                                 <i className="fab fa-discord"></i>
                                             </span>
                                             <span>Visit Us on Discord</span>
-                                        </DiscordButton>
+                                        </Button>
                                     </a>
                                 </div>
 
                                 <div className="column is-one-third">
                                     <a href="https://twitter.com/OrchestraFM">
-                                        <button className="button is-large is-info">
+                                        <Button className="button is-large is-info">
                                             <span className="icon is-medium">
                                                 <i className="fab fa-twitter"></i>
                                             </span>
                                             <span>Follow Us on Twitter</span>
-                                        </button>
+                                        </Button>
                                     </a>
                                 </div>
                             </div>
@@ -93,14 +97,15 @@ class Home extends Component {
                                 <div className="column is-half is-offset-one-quarter">
                                     <div className="field has-addons">
 
-                                            <div className="control">
-                                                <input className="input is-large" type="email" placeholder="example@example.com" value={this.state.email} onChange={this.handleChange}/>
-                                            </div>
-                                            <div className="control">
-                                                <button type="submit" className="button is-success is-large" onClick={this.handleSubmit}>
+                                        <div className="control">
+                                            <input className="input is-large" type="email" placeholder="example@example.com" value={this.state.email} onChange={this.handleChange}/>
+                                        </div>
+                                        <div className="control">
+                                            <Button type="submit" className="button is-success is-large" onClick={this.handleSubmit} loading={this.state.loading} disabled={this.state.loading}
+                                            state="loading">
                                                 Request Early Access
-                                                </button>
-                                            </div>
+                                            </Button>
+                                        </div>
 
                                     </div>
                                 </div>
