@@ -84,6 +84,7 @@ class Main extends Component {
                             }
                             </style>
                         </Helmet>
+            </ToastProvider>
         )
     }
 }
