@@ -8,6 +8,9 @@ import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
 import NavBar from "./components/navbar"
 import Home from "./pages/home"
+import NavBar from "./components/navbar";
+import Home from "./pages/home";
+import Footer from "./components/footer";
 
 class Main extends Component {
     render() {
@@ -84,6 +87,13 @@ class Main extends Component {
                             }
                             </style>
                         </Helmet>
+                        <NavBar/>
+                        <Switch>
+                            <Route path="/" exact component={Home}/>
+                        </Switch>
+                    </div>
+                </Router>
+                <Footer/>
             </ToastProvider>
         )
     }
