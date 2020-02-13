@@ -35,7 +35,7 @@ class Footer extends Component {
                                         />
                                         &nbsp;2020, Orchestra FM. Source Code is licensed under
                                         <a
-                                        href="https://opensource.org/licenses/AGPL-3.0.php"
+                                        href="https://opensource.org/licenses/AGPL-3.0"
                                         >
                                         &nbsp;GNU Affero General Public License 3
                                         </a>
