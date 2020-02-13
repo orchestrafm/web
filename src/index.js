@@ -6,34 +6,18 @@ import { ToastProvider } from 'react-toast-notifications';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 
-import NavBar from "./components/navbar"
-import Home from "./pages/home"
 import NavBar from "./components/navbar";
 import Home from "./pages/home";
+import Tracks from "./pages/tracks";
 import Footer from "./components/footer";
 
 class Main extends Component {
     render() {
         window.__react_toast_provider = React.createRef();
         return (
-            <Router>
-                <div className="App">
-                    <Helmet>
-                        <style>
-                        {
-                            'html, body, #background { background-color: #242424;}'
-                        }
-                        </style>
-                    </Helmet>
-                    <NavBar/>
-                    <Switch>
-                        <Route path="/" exact component={Home}/>
-                    </Switch>
-                </div>
-            </Router>
             <ToastProvider ref={window.__react_toast_provider}>
                 <Router>
-                    <div className="App">
+                    <div className="App Main">
                         <Helmet>
                             <style>
                             {
@@ -48,6 +32,7 @@ class Main extends Component {
                                     flex: 1;
                                 }
 
+                                html, body, #background {
                                     background-color: #242424;
                                     background-image: url(./squares.png);
                                 }
@@ -98,8 +83,10 @@ class Main extends Component {
                             </style>
                         </Helmet>
                         <NavBar/>
-                        <Switch>
+                        <Switch className="Main-Loop">
                             <Route path="/" exact component={Home}/>
+                            <Route path="/tracks" exact component={Tracks}/>
+                            <Route path="/track/:id" component={Tracks}/>
                         </Switch>
                     </div>
                 </Router>
