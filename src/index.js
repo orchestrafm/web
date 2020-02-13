@@ -37,7 +37,17 @@ class Main extends Component {
                         <Helmet>
                             <style>
                             {
-                                `html, body, #background {
+                                `
+                                .Main {
+                                    display: flex;
+                                    min-height: 100vh;
+                                    flex-direction: column;
+                                }
+
+                                .Main-Loop {
+                                    flex: 1;
+                                }
+
                                     background-color: #242424;
                                     background-image: url(./squares.png);
                                 }
