@@ -36,7 +36,7 @@ class Home extends Component {
             });
         });
 
-        if (res != undefined) {
+        if (res !== undefined) {
             addToast("Added to the waitlist!.", {
                 appearance: 'success',
                 autoDismiss: true,
