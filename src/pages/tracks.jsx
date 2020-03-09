@@ -20,15 +20,21 @@ function Tracks() {
     }
 
     return (
-        <div>
-        {
+        <div className="container is-fluid">
+
+            <div className="columns is-multiline">
+            {
             tracks.map(track => (
+                <div className="column is-half">
                         <TrackCard
                         title={track.title}
                         artists={track.artists}
                         id={track.id}
                         />
-        ))}
+                </div>
+            ))}
+            </div>
+            
         </div>
     )
 
