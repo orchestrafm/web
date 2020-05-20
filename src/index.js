@@ -9,6 +9,8 @@ import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 import NavBar from "./components/navbar";
 import Home from "./pages/home";
 import Tracks from "./pages/tracks";
+import Registration from "./pages/registration";
+import Login from "./pages/login";
 import Footer from "./components/footer";
 
 class Main extends Component {
@@ -87,6 +89,8 @@ class Main extends Component {
                             <Route path="/" exact component={Home}/>
                             <Route path="/tracks" exact component={Tracks}/>
                             <Route path="/track/:id" component={Tracks}/>
+                            <Route path="/registration" component={Registration}/>
+                            <Route path="/login" component={Login}/>
                         </Switch>
                     </div>
                 </Router>
