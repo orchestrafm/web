@@ -23,16 +23,16 @@
             <div class="navbar-start">
                 <router-link to="/play" class="navbar-item">Play</router-link>
                 <router-link to="/tracks" class="navbar-item">Tracks</router-link>
-                <router-link to="/rankings" class="navbar-item">Rankings</router-link>
+                <!-- <router-link to="/rankings" class="navbar-item">Rankings</router-link>
                 <router-link to="/community" class="navbar-item">Community</router-link>
-                <router-link to="/help" class="navbar-item">Help</router-link>
+                <router-link to="/help" class="navbar-item">Help</router-link> -->
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <router-link to="/register" class="button is-light">Sign up</router-link>
-                        <router-link to="/login" class="button is-light">Log in</router-link>
+                        <router-link to="/register" class="button is-light">Register</router-link>
+                        <!-- <router-link to="/login" class="button is-light">Log in</router-link> -->
                     </div>
                 </div>
             </div>
