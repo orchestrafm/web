@@ -8,6 +8,7 @@ import Rankings from "./views/Rankings.vue";
 import Play from "./views/Play.vue";
 import Register from "./views/Register.vue";
 import Login from "./views/Login.vue";
+import Board from "./views/Board.vue";
 
 const routes = [
     {
@@ -43,6 +44,10 @@ const routes = [
         path: "/help",
         component: Help
     }
+	{
+		path: "/track/:trackId/board/:boardId",
+		component: Board
+	}
 ];
 
 const router = createRouter({
