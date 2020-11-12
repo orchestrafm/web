@@ -1,8 +1,8 @@
 <template>
 	<div v-if="initialized" class="card is-horizontal">
 		<div class="card-image is-horizontal">
-			<figure class="image is-160x160 is-horizontal">
-				<img :key="this.boardJacket" v-bind:src="this.boardJacket" alt="Placeholder image" style="width:160px;height:160px;"/>
+			<figure class="image is-170x170 is-horizontal">
+				<img :key="this.boardJacket" v-bind:src="this.boardJacket" alt="Placeholder image" style="width:170px;height:170px;"/>
 			</figure>
 		</div>
 		
@@ -45,7 +45,7 @@ export default {
 		return {
 			initialized: false,
 			boardList: [],
-			boardJacket: "https://via.placeholder.com/160x160.webp"
+			boardJacket: "https://via.placeholder.com/170x170.webp"
 		};
 	},
 	async created() {
