@@ -2,7 +2,7 @@
   <div id="app">
     <navbar/>
     <div>&nbsp;</div>
-    <router-view class="content"/>
+    <router-view :key="$route.fullPath" class="content"/>
     <customfooter/>
   </div>
 </template>
