@@ -1,5 +1,5 @@
 <template>
-	<div class="card is-horizontal">
+	<div v-if="initialized" class="card is-horizontal">
 		<div class="card-image is-horizontal">
 			<figure class="image is-160x160 is-horizontal">
 				<img :key="this.boardJacket" v-bind:src="this.boardJacket" alt="Placeholder image" style="width:160px;height:160px;"/>
@@ -43,6 +43,7 @@ export default {
     },
 	data() {
 		return {
+			initialized: false,
 			boardList: [],
 			boardJacket: "https://via.placeholder.com/160x160.webp"
 		};
@@ -60,6 +61,8 @@ export default {
 			}
 		}("difficulty_rating"));
 		this.boardJacket = this.boardList[0].jacket;
+		
+		this.initialized = true;
 	}
 }
 </script>

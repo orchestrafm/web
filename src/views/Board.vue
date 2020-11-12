@@ -5,33 +5,33 @@
 		<section class="hero is-medium is-light has-bg-img">
 			<img class="is-bg-img" style="visibility: hidden; display: none;"/>
 			<div class="hero-body">
-				<div class="container has-text-centered">
+				<div v-if="initialized" class="container has-text-centered">
 					<h1 class="title" style="color: white; -webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: black;">{{songTitle}}</h1>
 					<h2 class="subtitle" style="color: white; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;">{{songArtists}}</h2>
 				</div>
 			</div>
 		</section>
 	
-		<div class="tabs is-centered">
+		<div v-if="initialized" class="tabs is-centered">
 			<ul>
 				<li v-for="board in boards" style="color: white; background-color: white;"><router-link :to="board.url">{{board.diff}} ({{board.rating}})</router-link></li>
 			</ul>
 		</div>
 		
-		<table class="table">
+		<table v-if="initialized" class="table">
 		
 			<thead>
 				<tr>
 					<th>Rank</th>
 					<th>Grade</th>
 					<th>Player</th>
-					<th><abbr title="Score">Scr</abbr></th>
+					<th>Score</th>
 					<th>Rate</th>
-					<th><abbr title="Combo">Com</abbr></th>
-					<th><abbr title="Accuracy">Acc</abbr></th>
-					<th><abbr title="Criticals">Crits</abbr></th>
+					<th>Max Combo</th>
+					<th>Accuracy</th>
+					<th>Criticals</th>
 					<th>Nears</th>
-					<th><abbr title="Errors">Errs</abbr></th>
+					<th>Errors</th>
 				</tr>
 			</thead>
 			
@@ -40,13 +40,13 @@
 					<th>Rank</th>
 					<th>Grade</th>
 					<th>Player</th>
-					<th><abbr title="Score">Scr</abbr></th>
+					<th>Score</th>
 					<th>Rate</th>
-					<th><abbr title="Combo">Com</abbr></th>
-					<th><abbr title="Accuracy">Acc</abbr></th>
-					<th><abbr title="Criticals">Crits</abbr></th>
+					<th>Max Combo</th>
+					<th>Accuracy</th>
+					<th>Criticals</th>
 					<th>Nears</th>
-					<th><abbr title="Errors">Errs</abbr></th>
+					<th>Errors</th>
 				</tr>
 			</tfoot>
 			
@@ -77,6 +77,8 @@ export default {
     name: "Board",
 	data() {
 		return {
+			initialized: false,
+			
 			scores: [],
 			playerNames: [],
 			songTitle: "Uninitalized",
@@ -248,6 +250,8 @@ export default {
 					continue;
 			}
 		}
+		
+		this.initialized = true;
 	}
 }
 </script>

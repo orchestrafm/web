@@ -1,5 +1,5 @@
 <template>
-	<p class="control">
+	<p v-if="initialized" class="control">
 		<router-link :to="toURL">
 			<button class="button is-rounded" :key="this.newStyle" v-bind:style="this.newStyle">
 				{{name}} ({{newRating}})
@@ -16,6 +16,8 @@ export default {
 	props: ["rating", "diff", "track_id", "board_id"],
 	data() {
 		return {
+			initialized: false,
+			
 			newClass: "",
 			newStyle: {},
 			newRating: "",
@@ -38,47 +40,41 @@ export default {
 					backgroundColor: "#6515ea;",
 					color: "#fffff;"
 				};
-				return;
 			break;
 			
 			case 1:
 				this.name = "Advanced";
-				return;
 			break;
 			
 			case 2:
 				this.name = "Exhaust";
-				return;
 			break;
 			
 			case 3:
 				this.name = "Maximum";
-				return;
 			break;
 			
 			case 4:
 				this.name = "Infinite";
-				return;
 			break;
 			
 			case 5:
 				this.name = "Gravity";
-				return;
 			break;
 			
 			case 6:
 				this.name = "Heavenly";
-				return;
 			break;
 			
 			case 7:
 				this.name = "Vivid";
-				return;
 			break;
 			
 			default:
 				return;
 		}
+		
+		this.initialized = true;
 	}
 }
 </script>
