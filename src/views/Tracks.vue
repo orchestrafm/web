@@ -11,10 +11,10 @@
 	</div>
 	
 	<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-		<router-link :to="'/tracks/' + (parseInt(this.$route.params.page) - 1)" class="pagination-previous" style="background-color: white; color: black;">
+		<router-link :to="'/tracks/' + (parseInt(this.$route.params.page) - 1)" v-bind:disabled="pageIsMinimum()" class="pagination-previous" style="background-color: white; color: black;">
 			Previous
 		</router-link>
-		<router-link :to="'/tracks/' + (parseInt(this.$route.params.page) + 1)" class="pagination-next" style="background-color: white; color: black;">
+		<router-link :to="'/tracks/' + (parseInt(this.$route.params.page) + 1)" v-bind:disabled="pageIsMaximum()" class="pagination-next" style="background-color: white; color: black;">
 			Next Page
 		</router-link>
 		<ul class="pagination-list">
@@ -73,6 +73,16 @@ export default {
 				background: "white",
 				color: "black"
 			};
+		},
+		pageIsMinimum() {
+			if (this.$route.params.page == 1) {
+				return true;
+			}
+		},
+		pageIsMaximum() {
+			if (this.$route.params.page == this.pages) {
+				return true;
+			}
 		}
 	}
 }
