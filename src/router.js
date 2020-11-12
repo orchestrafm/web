@@ -29,7 +29,7 @@ const routes = [
         component: Play
     },
     {
-        path: "/tracks",
+        path: "/tracks/:page",
         component: Tracks
     },
     {
