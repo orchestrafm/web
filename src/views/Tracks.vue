@@ -20,7 +20,7 @@
 		<ul class="pagination-list">
 			<li v-for="n in pages">
 				<router-link :to="'/tracks/' + n">
-					<a class="pagination-link" style="background-color: white; color: black;">{{n}}</a>
+					<a v-bind:class="isCurrentForClass(n)" v-bind:style="isCurrentForStyle(n)">{{n}}</a>
 				</router-link>
 			</li>
 		</ul>
@@ -55,6 +55,25 @@ export default {
 	},
 	components: {
         trackcard
-    }
+    },
+	methods: {
+		isCurrentForClass(page) {
+			return {
+				'pagination-link': true,
+				'is-current': (page == this.$route.params.page)
+			};
+		},
+		isCurrentForStyle(page) {
+			if (page == this.$route.params.page) {
+				return null;
+			}
+			
+			return {
+				backgroundColor: "white",
+				background: "white",
+				color: "black"
+			};
+		}
+	}
 }
 </script>
