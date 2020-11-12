@@ -12,10 +12,12 @@
 			</div>
 		</section>
 	
-		<div v-if="initialized" class="tabs is-centered">
-			<ul>
-				<li v-for="board in boards" style="color: white; background-color: white;"><router-link :to="board.url">{{board.diff}} ({{board.rating}})</router-link></li>
-			</ul>
+		<div class="container is-fluid">
+			<div v-if="initialized" class="tabs is-boxed is-fullwidth is-centered">
+				<ul>
+					<li v-for="board in boards" v-bind:class="isActive(board.id)" style="color: white; background-color: white;"><router-link :to="board.url">{{board.diff}} (LV. {{board.rating}})</router-link></li>
+				</ul>
+			</div>
 		</div>
 		
 		<table v-if="initialized" class="table">
@@ -178,6 +180,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Novice",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -187,6 +190,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Advanced",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -196,6 +200,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Exhaust",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -205,6 +210,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Maximum",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -214,6 +220,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Infinite",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -223,6 +230,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Gravity",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -232,6 +240,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Heavenly",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -241,6 +250,7 @@ export default {
 					this.boards.push({
 						rating: this.boardList[i].difficulty_rating,
 						diff: "Vivid",
+						id: this.boardList[i].id,
 						url: url
 					});
 					continue;
@@ -252,6 +262,13 @@ export default {
 		}
 		
 		this.initialized = true;
+	},
+	methods: {
+		isActive(board_id) {
+			return {
+				'is-active': (board_id == this.$route.params.boardId)
+			}
+		}
 	}
 }
 </script>

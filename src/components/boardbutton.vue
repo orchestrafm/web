@@ -1,7 +1,7 @@
 <template v-if="initialized">
 	<router-link :to="toURL">
 		<button class="button is-rounded" :key="this.newStyle" v-bind:style="this.newStyle">
-			{{name}} ({{newRating}})
+			{{name}} (LV. {{newRating}})
 		</button> &nbsp;
 	</router-link>
 </template>
