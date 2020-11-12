@@ -20,11 +20,11 @@
 				<div> &nbsp; </div>
 				<div> &nbsp; </div>
 				
-				<div class="container columns">
-					<div v-for="board in boardList" class="column field has-addons">
-						<boardbutton v-bind:rating="board.difficulty_rating" v-bind:diff="board.difficulty_name" v-bind:track_id="board.track_id" v-bind:board_id="board.id"/>
-					</div>
-				</div>
+				<nav class="container level is-fluid is-centered">
+					<p class="level-item buttons control">
+						<boardbutton v-for="board in boardList" v-bind:rating="board.difficulty_rating" v-bind:diff="board.difficulty_name" v-bind:track_id="board.track_id" v-bind:board_id="board.id"/>
+					</p>
+				</nav>
 			</div>
 		</div>
 	</div>

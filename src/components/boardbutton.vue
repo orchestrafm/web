@@ -1,11 +1,9 @@
-<template>
-	<p v-if="initialized" class="control">
-		<router-link :to="toURL">
-			<button class="button is-rounded" :key="this.newStyle" v-bind:style="this.newStyle">
-				{{name}} ({{newRating}})
-			</button>
-		</router-link>
-	</p>
+<template v-if="initialized">
+	<router-link :to="toURL">
+		<button class="button is-rounded" :key="this.newStyle" v-bind:style="this.newStyle">
+			{{name}} ({{newRating}})
+		</button> &nbsp;
+	</router-link>
 </template>
 
 <script>
