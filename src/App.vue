@@ -1,21 +1,24 @@
 <template>
-  <div id="app">
-    <navbar/>
-    <div>&nbsp;</div>
-    <router-view :key="$route.fullPath" class="content"/>
-    <customfooter/>
-  </div>
+    <div id="app">
+        <frozen/>
+        <navbar/>
+        <div>&nbsp;</div>
+        <router-view :key="$route.fullPath" class="content"/>
+        <customfooter/>
+    </div>
 </template>
 
 <script>
 import navbar from "@/components/navbar.vue";
 import customfooter from "@/components/footer.vue";
+import frozen from "@/components/frozen.vue";
 
 export default {
     name: "App",
     components: {
         navbar,
-        customfooter
+        customfooter,
+        frozen
     }
 }
 </script>
